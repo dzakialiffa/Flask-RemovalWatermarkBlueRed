@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- Memulai dokumen HTML -->
+<html>
+   <head>
+      <!-- Menambahkan judul dokumen -->
+      <title>Remove Watermark</title>
+      <!-- Menambahkan link ke file CSS terpisah -->
+      <link rel="stylesheet" href="./static/style.css">
+   </head>
+   <body>
+      <!-- Menambahkan judul halaman -->
+      <h1>Remove Watermark</h1>
+      <!-- Membuat form untuk mengupload file -->
+      <form action="/" method="post" enctype="multipart/form-data">
+         <input type="file" name="file"><br><br>
+         <!-- Menambahkan tombol untuk mengirim form -->
+         <input type="submit" value="Upload">
+      </form>
+      {% if filename %}
+         <!-- Menampilkan hasil penghapusan watermark -->
+         <img src="{{ filename }}" alt="removed watermark">
+         <br>
+         <!-- Menambahkan link untuk mendownload hasil penghapusan watermark -->
+         <a href="/download/{{ filename }}">Download Result</a>
+      {% endif %}
+   </body>
+<!-- Menutup dokumen HTML -->
+</html>
